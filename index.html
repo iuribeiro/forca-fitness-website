@@ -1,310 +1,97 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="theme-color" content="#05245e" />
-  <meta name="description" content="Força Fitness is a Ninja Warrior training facility in Ajax, Ontario, with programs for competitive athletes, recreational ninjas, and adults." />
-  <title>Força Fitness | Ninja Training in Ajax</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,600;0,700;0,800;0,900;1,700&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <meta name="description" content="A new Força Fitness experience is coming soon." />
+  <title>Força Fitness | Coming Soon</title>
   <style>
     :root {
-      --ink: #061632;
-      --navy: #03183e;
-      --blue: #242990;
-      --cobalt: #3246b3;
-      --tile: #4b65cf;
-      --paper: #f8fbff;
-      --white: #fff;
-      --terra: #75bdff;
-      --line: rgba(255,255,255,.18);
-      --max: 1240px;
+      color-scheme: dark;
+      --ink: #f7f4ee;
+      --muted: #aaa69d;
+      --orange: #ff5b22;
+      --charcoal: #121212;
     }
+
     * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-    body { margin: 0; color: var(--ink); background: var(--paper); font-family: "DM Sans", sans-serif; font-size: 16px; line-height: 1.55; }
-    a { color: inherit; }
-    button, a { -webkit-tap-highlight-color: transparent; }
-    .skip { position: fixed; left: 1rem; top: -5rem; z-index: 99; background: white; color: var(--ink); padding: .8rem 1rem; font-weight: 700; }
-    .skip:focus { top: 1rem; }
-    .shell { width: min(var(--max), calc(100% - 3rem)); margin: 0 auto; }
-    header { position: absolute; inset: 0 0 auto; z-index: 20; color: white; border-bottom: 1px solid var(--line); }
-    .nav { min-height: 88px; display: flex; align-items: center; justify-content: space-between; gap: 2rem; }
-    .brand { display: inline-flex; align-items: center; color: inherit; text-decoration: none; }
-    .brand-logo { display: block; width: auto; height: 54px; filter: brightness(0) invert(1); }
-    .nav-links { display: flex; align-items: center; gap: 2rem; }
-    .nav-links a { color: inherit; text-decoration: none; font-weight: 600; font-size: .92rem; }
-    .nav-links a:not(.nav-cta) { opacity: .82; }
-    .nav-links a:hover, .nav-links a:focus-visible { opacity: 1; }
-    .nav-cta { border: 1px solid rgba(255,255,255,.6); padding: .75rem 1rem; }
-    .menu { display: none; background: none; color: white; border: 0; font: 700 .9rem "DM Sans"; text-transform: uppercase; letter-spacing: .08em; padding: .7rem; }
 
-    .hero { min-height: 800px; height: 96svh; max-height: 980px; color: white; display: grid; align-items: end; position: relative; overflow: hidden; background: var(--navy); }
-    .hero::before { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, rgba(2,13,35,.96) 0%, rgba(2,17,45,.74) 36%, rgba(2,17,45,.12) 73%), linear-gradient(0deg, rgba(2,17,45,.82), transparent 48%), url("force-fitness-hero.png") 58% center / cover no-repeat; transform: scale(1.015); }
-    .hero::after { content: ""; position: absolute; width: 420px; height: 420px; right: -190px; bottom: -190px; border: 44px double rgba(255,255,255,.13); transform: rotate(45deg); }
-    .hero-content { position: relative; z-index: 2; padding: 9rem 0 4.5rem; }
-    .eyebrow { display: flex; align-items: center; gap: .8rem; margin: 0 0 1.15rem; font-size: .78rem; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; }
-    .eyebrow::before { content: ""; width: 34px; height: 3px; background: var(--terra); }
-    h1, h2, h3 { font-family: "Barlow Condensed", sans-serif; text-transform: uppercase; margin: 0; line-height: .92; }
-    h1 { max-width: 730px; font-size: clamp(5rem, 11vw, 9rem); font-weight: 900; letter-spacing: -.045em; }
-    .hero-copy { max-width: 570px; margin: 1.4rem 0 2.25rem; color: rgba(255,255,255,.8); font-size: clamp(1rem, 1.5vw, 1.15rem); }
-    .actions { display: flex; align-items: center; gap: 1rem; flex-wrap: wrap; }
-    .button { min-height: 52px; padding: .92rem 1.35rem; display: inline-flex; align-items: center; justify-content: center; gap: .7rem; border: 1px solid white; color: white; text-decoration: none; text-transform: uppercase; letter-spacing: .06em; font-weight: 700; font-size: .87rem; transition: transform .2s, background .2s, color .2s; }
-    .button.primary { background: white; color: var(--navy); }
-    .button:hover, .button:focus-visible { transform: translateY(-2px); }
-    .button.primary:hover, .button.primary:focus-visible { background: var(--terra); color: white; border-color: var(--terra); }
-    .arrow { font-size: 1.1rem; transition: transform .2s; }
-    .button:hover .arrow { transform: translateX(4px); }
-    .hero-stats { display: grid; grid-template-columns: repeat(3, 1fr); width: min(750px, 100%); margin-top: 4rem; border-top: 1px solid var(--line); }
-    .stat { padding: 1.35rem 1.6rem 0 0; }
-    .stat + .stat { padding-left: 1.6rem; border-left: 1px solid var(--line); }
-    .stat strong { display: block; font: 800 2.25rem/1 "Barlow Condensed", sans-serif; }
-    .stat span { display: block; margin-top: .35rem; color: rgba(255,255,255,.62); font-size: .77rem; text-transform: uppercase; letter-spacing: .09em; }
-
-    .programs { padding: 7.5rem 0; background: white; }
-    .section-head { display: flex; justify-content: space-between; align-items: end; gap: 3rem; margin-bottom: 3.3rem; }
-    .section-head h2 { font-size: clamp(3.8rem, 7vw, 6.2rem); letter-spacing: -.03em; max-width: 700px; }
-    .section-head p { margin: 0 0 .3rem; max-width: 430px; color: #50617f; }
-    .program-grid { display: grid; grid-template-columns: 1.2fr 1fr 1fr; border: 1px solid #cbd9ed; }
-    .program-card { min-height: 370px; padding: 2rem; display: flex; flex-direction: column; position: relative; overflow: hidden; color: var(--ink); background: #f7faff; transition: background .25s, color .25s; }
-    .program-card + .program-card { border-left: 1px solid #cbd9ed; }
-    .program-card:first-child { background: var(--blue); color: white; }
-    .program-card:hover { background: var(--navy); color: white; }
-    .program-card::after { content: ""; position: absolute; width: 120px; height: 120px; right: -62px; top: -62px; border: 18px double currentColor; opacity: .12; transform: rotate(45deg); }
-    .program-num { font: 700 .76rem "DM Sans"; letter-spacing: .14em; opacity: .55; }
-    .program-card h3 { font-size: clamp(2.2rem, 4vw, 3.5rem); margin-top: auto; letter-spacing: -.02em; }
-    .program-card p { max-width: 320px; margin: 1rem 0 0; opacity: .73; }
-    .program-line { width: 46px; height: 4px; margin-top: 1.4rem; background: var(--terra); }
-
-    .facility { position: relative; overflow: hidden; background: var(--navy); color: white; }
-    .facility-grid { min-height: 670px; display: grid; grid-template-columns: .9fr 1.1fr; }
-    .facility-metric { padding: 7rem 7% 7rem max(1.5rem, calc((100vw - var(--max)) / 2)); display: flex; flex-direction: column; justify-content: center; background: var(--cobalt); position: relative; }
-    .facility-metric::before { content: ""; position: absolute; inset: 0; opacity: .12; background-image: linear-gradient(45deg, transparent 42%, white 43%, white 47%, transparent 48%), linear-gradient(-45deg, transparent 42%, white 43%, white 47%, transparent 48%); background-size: 72px 72px; }
-    .facility-metric > * { position: relative; }
-    .big-number { font: 900 clamp(7rem, 15vw, 13rem)/.72 "Barlow Condensed", sans-serif; letter-spacing: -.06em; }
-    .big-number sup { font-size: .25em; vertical-align: top; margin-left: .1em; letter-spacing: 0; }
-    .facility-metric h2 { font-size: clamp(2.3rem, 4vw, 4rem); margin-top: 2rem; max-width: 500px; }
-    .facility-copy { display: flex; flex-direction: column; justify-content: center; padding: 7rem max(1.5rem, calc((100vw - var(--max)) / 2)) 7rem 7%; }
-    .facility-copy h2 { font-size: clamp(3.5rem, 7vw, 6rem); max-width: 640px; }
-    .facility-copy > p { color: rgba(255,255,255,.66); max-width: 590px; margin: 1.6rem 0 2.3rem; }
-    .feature-list { display: grid; grid-template-columns: 1fr 1fr; gap: 0; border-top: 1px solid var(--line); }
-    .feature { padding: 1.25rem 1rem 1.25rem 0; border-bottom: 1px solid var(--line); font-weight: 600; }
-    .feature:nth-child(even) { padding-left: 1rem; border-left: 1px solid var(--line); }
-
-    .approach { padding: 7.5rem 0; }
-    .approach-grid { display: grid; grid-template-columns: .85fr 1.15fr; gap: 7vw; align-items: start; }
-    .approach h2 { font-size: clamp(4rem, 8vw, 7.5rem); letter-spacing: -.04em; }
-    .approach h2 em { display: block; color: var(--cobalt); font-style: normal; }
-    .principles { counter-reset: step; border-top: 1px solid #bfcee4; }
-    .principle { counter-increment: step; display: grid; grid-template-columns: 56px 1fr; gap: 1.2rem; padding: 1.7rem 0; border-bottom: 1px solid #bfcee4; }
-    .principle::before { content: "0" counter(step); color: var(--cobalt); font: 700 .8rem "DM Sans"; letter-spacing: .1em; padding-top: .35rem; }
-    .principle h3 { font-size: 1.85rem; letter-spacing: 0; }
-    .principle p { margin: .45rem 0 0; color: #566680; }
-
-    .closing { background: var(--blue); color: white; text-align: center; position: relative; overflow: hidden; }
-    .closing::before, .closing::after { content: ""; position: absolute; width: 280px; aspect-ratio: 1; border: 28px double rgba(255,255,255,.19); transform: rotate(45deg); }
-    .closing::before { left: -145px; top: -160px; }
-    .closing::after { right: -145px; bottom: -160px; }
-    .closing .shell { position: relative; z-index: 1; padding-top: 6.5rem; padding-bottom: 6.5rem; }
-    .closing h2 { font-size: clamp(4.5rem, 10vw, 8.7rem); letter-spacing: -.04em; }
-    .closing p { margin: 1.2rem auto 2rem; max-width: 560px; font-weight: 500; }
-    .closing .button.primary { border-color: var(--navy); background: var(--navy); color: white; }
-    .closing .button.primary:hover { background: white; color: var(--navy); border-color: white; }
-    footer { background: #02102c; color: rgba(255,255,255,.65); }
-    .footer-inner { min-height: 120px; display: flex; align-items: center; justify-content: space-between; gap: 2rem; }
-    footer .brand-logo { height: 60px; }
-    footer p { margin: 0; font-size: .86rem; }
-    .reveal { opacity: 0; transform: translateY(28px); transition: opacity .7s ease, transform .7s ease; }
-    .reveal.visible { opacity: 1; transform: none; }
-
-    @media (max-width: 860px) {
-      .shell { width: min(100% - 2rem, var(--max)); }
-      .nav { min-height: 74px; }
-      .menu { display: block; }
-      .nav-links { display: none; position: absolute; left: 0; right: 0; top: 74px; padding: 1.5rem; background: var(--navy); border-top: 1px solid var(--line); flex-direction: column; align-items: stretch; gap: 0; }
-      .nav-links.open { display: flex; }
-      .nav-links a { padding: .85rem; }
-      .hero { min-height: 730px; }
-      .hero::before { background: linear-gradient(90deg, rgba(2,13,35,.94) 0%, rgba(2,17,45,.5) 75%), linear-gradient(0deg, rgba(2,17,45,.88), transparent 55%), url("force-fitness-hero.png") 64% center / cover no-repeat; }
-      h1 { font-size: clamp(4.8rem, 18vw, 7.2rem); }
-      .hero-stats { margin-top: 3rem; }
-      .program-grid { grid-template-columns: 1fr; }
-      .program-card { min-height: 300px; }
-      .program-card + .program-card { border-left: 0; border-top: 1px solid #cbd9ed; }
-      .facility-grid, .approach-grid { grid-template-columns: 1fr; }
-      .facility-grid { min-height: 0; }
-      .facility-metric, .facility-copy { padding: 5.5rem 1.5rem; }
-      .big-number { font-size: clamp(8rem, 30vw, 12rem); }
-      .approach-grid { gap: 3.5rem; }
+    body {
+      min-height: 100vh;
+      margin: 0;
+      display: grid;
+      place-items: center;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at 15% 20%, rgba(255, 91, 34, 0.2), transparent 28rem),
+        linear-gradient(135deg, rgba(23, 23, 23, 0.94), rgba(9, 9, 9, 0.78) 70%),
+        url("force-fitness-hero.png") center / cover no-repeat;
+      color: var(--ink);
+      font-family: Arial, Helvetica, sans-serif;
     }
-    @media (max-width: 600px) {
-      .section-head { display: block; }
-      .section-head p { margin-top: 1.3rem; }
-      .programs, .approach { padding: 5.5rem 0; }
-      .hero-content { padding-bottom: 2.6rem; }
-      .hero-copy { font-size: 1rem; }
-      .button { width: 100%; }
-      .hero-stats { grid-template-columns: 1fr; }
-      .stat { display: flex; align-items: baseline; gap: .8rem; padding: .9rem 0; }
-      .stat + .stat { padding-left: 0; border-left: 0; border-top: 1px solid var(--line); }
-      .stat strong { font-size: 1.8rem; }
-      .stat span { margin: 0; }
-      .feature-list { grid-template-columns: 1fr; }
-      .feature:nth-child(even) { padding-left: 0; border-left: 0; }
-      .footer-inner { padding: 2rem 0; align-items: flex-start; flex-direction: column; }
+
+    body::after {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      opacity: 0.08;
+      background-image: repeating-linear-gradient(115deg, transparent 0 22px, #fff 23px, transparent 24px);
     }
-    @media (prefers-reduced-motion: reduce) {
-      html { scroll-behavior: auto; }
-      *, *::before, *::after { transition-duration: .01ms !important; animation-duration: .01ms !important; }
-      .reveal { opacity: 1; transform: none; }
+
+    main {
+      width: min(90vw, 760px);
+      padding: clamp(2rem, 7vw, 5rem);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      background: rgba(18, 18, 18, 0.76);
+      backdrop-filter: blur(12px);
+      box-shadow: 0 2rem 6rem rgba(0, 0, 0, 0.42);
     }
+
+    .eyebrow {
+      margin: 0 0 1.5rem;
+      color: var(--orange);
+      font-size: 0.75rem;
+      font-weight: 800;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      max-width: 9ch;
+      margin: 0;
+      font-size: clamp(3.6rem, 12vw, 8rem);
+      line-height: 0.82;
+      letter-spacing: -0.07em;
+      text-transform: uppercase;
+    }
+
+    h1 span { color: var(--orange); }
+
+    .rule {
+      width: 4rem;
+      height: 0.35rem;
+      margin: 2.25rem 0;
+      background: var(--orange);
+    }
+
+    p {
+      max-width: 31rem;
+      margin: 0;
+      color: var(--muted);
+      font-size: clamp(1rem, 2.4vw, 1.25rem);
+      line-height: 1.65;
+    }
+
+    strong { color: var(--ink); }
   </style>
 </head>
 <body>
-  <a class="skip" href="#main">Skip to content</a>
-  <header>
-    <nav class="nav shell" aria-label="Main navigation">
-      <a class="brand" href="#top" aria-label="Força Fitness home">
-        <img class="brand-logo" src="forca-fitness-logo.png" alt="Força Fitness" />
-      </a>
-      <button class="menu" type="button" aria-expanded="false" aria-controls="nav-links">Menu</button>
-      <div class="nav-links" id="nav-links">
-        <a href="#programs">Programs</a>
-        <a href="#facility">Facility</a>
-        <a href="#approach">Our approach</a>
-        <a class="nav-cta" href="#programs">Find your program</a>
-      </div>
-    </nav>
-  </header>
-
-  <main id="main">
-    <section class="hero" id="top">
-      <div class="hero-content shell">
-        <p class="eyebrow">Ninja training · Ajax, Ontario</p>
-        <h1>Find your Força.</h1>
-        <p class="hero-copy">A purpose-built training ground for new ninjas, adult athletes, and serious competitors—planned around a 3,000 sq ft ninja floor.</p>
-        <div class="actions">
-          <a class="button primary" href="#programs">Explore programs <span class="arrow" aria-hidden="true">→</span></a>
-          <a class="button" href="#facility">See the facility</a>
-        </div>
-        <div class="hero-stats" aria-label="Facility highlights">
-          <div class="stat"><strong>3,000</strong><span>sq ft ninja floor</span></div>
-          <div class="stat"><strong>3</strong><span>training paths</span></div>
-          <div class="stat"><strong>1</strong><span>Ajax community</span></div>
-        </div>
-      </div>
-    </section>
-
-    <section class="programs" id="programs">
-      <div class="shell">
-        <div class="section-head reveal">
-          <div>
-            <p class="eyebrow">Choose your path</p>
-            <h2>Train at your level. Rise from there.</h2>
-          </div>
-          <p>Every program builds technique, strength, movement confidence, and obstacle awareness through coached progression.</p>
-        </div>
-        <div class="program-grid reveal">
-          <article class="program-card">
-            <span class="program-num">01 / COMPETE</span>
-            <h3>Competitive</h3>
-            <p>Focused training for athletes building the skill, strategy, and consistency to perform under pressure.</p>
-            <span class="program-line" aria-hidden="true"></span>
-          </article>
-          <article class="program-card">
-            <span class="program-num">02 / DISCOVER</span>
-            <h3>Recreational</h3>
-            <p>A welcoming way to learn obstacles, build confidence, and move with purpose.</p>
-            <span class="program-line" aria-hidden="true"></span>
-          </article>
-          <article class="program-card">
-            <span class="program-num">03 / MOVE</span>
-            <h3>Adults</h3>
-            <p>Full-body training that makes grip, agility, balance, and conditioning genuinely fun.</p>
-            <span class="program-line" aria-hidden="true"></span>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="facility" id="facility">
-      <div class="facility-grid">
-        <div class="facility-metric reveal">
-          <div class="big-number">3K<sup>sq ft</sup></div>
-          <h2>Dedicated to ninja training</h2>
-        </div>
-        <div class="facility-copy reveal">
-          <p class="eyebrow">The space</p>
-          <h2>Built for progression—not standing around.</h2>
-          <p>Força Fitness is planned as a 3,000–4,000 sq ft training facility, with approximately 3,000 sq ft dedicated to an adaptable ninja floor.</p>
-          <div class="feature-list">
-            <div class="feature">Technical obstacle zones</div>
-            <div class="feature">Grip &amp; upper-body training</div>
-            <div class="feature">Balance &amp; agility work</div>
-            <div class="feature">Competition preparation</div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="approach" id="approach">
-      <div class="shell approach-grid">
-        <div class="reveal">
-          <p class="eyebrow">How we train</p>
-          <h2>Earn the next <em>move.</em></h2>
-        </div>
-        <div class="principles reveal">
-          <article class="principle">
-            <div><h3>Build the base</h3><p>Learn efficient movement, safe landings, and the fundamentals that make harder obstacles possible.</p></div>
-          </article>
-          <article class="principle">
-            <div><h3>Connect the skills</h3><p>Turn individual techniques into fluid sequences through repeatable, coached progressions.</p></div>
-          </article>
-          <article class="principle">
-            <div><h3>Perform with intent</h3><p>Develop confidence, adaptability, and composure when the course demands your best.</p></div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="closing">
-      <div class="shell reveal">
-        <p class="eyebrow" style="justify-content:center">Força Fitness · Ajax</p>
-        <h2>Your next obstacle starts here.</h2>
-        <p>Competitive drive. Recreational challenge. Adult training with a point.</p>
-        <a class="button primary" href="#programs">Find your program <span class="arrow" aria-hidden="true">↑</span></a>
-      </div>
-    </section>
+  <main>
+    <p class="eyebrow">Ajax, Ontario · New site in training</p>
+    <h1>Força <span>Fitness</span></h1>
+    <div class="rule" aria-hidden="true"></div>
+    <p><strong>Something stronger is coming.</strong> We’re building a new online home for our community. Check back soon.</p>
   </main>
-
-  <footer>
-    <div class="footer-inner shell">
-      <a class="brand" href="#top" aria-label="Back to top">
-        <img class="brand-logo" src="forca-fitness-logo.png" alt="Força Fitness" />
-      </a>
-      <p>Ninja Warrior training · Ajax, Ontario</p>
-    </div>
-  </footer>
-  <script>
-    const menu = document.querySelector('.menu');
-    const links = document.querySelector('.nav-links');
-    menu.addEventListener('click', () => {
-      const open = menu.getAttribute('aria-expanded') === 'true';
-      menu.setAttribute('aria-expanded', String(!open));
-      links.classList.toggle('open', !open);
-    });
-    links.addEventListener('click', (event) => {
-      if (event.target.matches('a')) {
-        menu.setAttribute('aria-expanded', 'false');
-        links.classList.remove('open');
-      }
-    });
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => entry.target.classList.toggle('visible', entry.isIntersecting));
-    }, { threshold: .12 });
-    document.querySelectorAll('.reveal').forEach((element) => observer.observe(element));
-  </script>
 </body>
 </html>

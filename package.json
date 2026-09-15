@@ -1,0 +1,7 @@
+{
+  "name": "forca-fitness-website",
+  "private": true,
+  "scripts": {
+    "dev": "node dev-server.mjs"
+  }
+}
